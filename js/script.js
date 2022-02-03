@@ -2,7 +2,7 @@ $(".button").click(function () {
   //a random number is generated
   //that number chooses which string to display
   //the string displays in html
-  let numVal = Math.floor(Math.random() * 15)
+  let numVal = Math.floor(Math.random() * 17)
   const expr = numVal
   switch (expr) {
     case 1:
@@ -49,6 +49,12 @@ $(".button").click(function () {
       break
     case 15:
       $("#triangle").attr("src", "images/whirl.png")
+      break
+    case 16:
+      $("#triangle").attr("src", "images/abso.png")
+      break
+    case 17:
+      $("#triangle").attr("src", "images/fat-chance.png")
       break
     default:
       $("#triangle").attr("src", "images/thoughts.png")
