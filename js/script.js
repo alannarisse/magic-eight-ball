@@ -2,10 +2,12 @@ $(".button").click(function () {
   //a random number is generated
   //that number chooses which string to display
   //the string displays in html
+  // the numVal should be the same as the number of cases
   let numVal = Math.floor(Math.random() * 17)
   const expr = numVal
   switch (expr) {
     case 1:
+      //$('.answer).html("this is new");
       $("#triangle").attr("src", "images/ass.png")
       break
     case 2:
