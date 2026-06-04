@@ -3,7 +3,7 @@ $(".button").click(function () {
   //that number chooses which string to display
   //the string displays in html
   // the numVal should be the same as the number of cases
-  let numVal = Math.floor(Math.random() * 17)
+  let numVal = Math.floor(Math.random() * 22)
   const expr = numVal
   switch (expr) {
     case 1:
@@ -56,6 +56,21 @@ $(".button").click(function () {
       $("#triangle").attr("src", "images/abso.png")
       break
     case 17:
+      $("#triangle").attr("src", "images/ask-your-mom.png")
+      break
+    case 18:
+      $("#triangle").attr("src", "images/fuck-around-and.png")
+      break
+    case 19:
+      $("#triangle").attr("src", "images/lmgtfy.png")
+      break
+    case 20:
+      $("#triangle").attr("src", "images/ok-boomer.png")
+      break
+    case 21:
+      $("#triangle").attr("src", "images/signs-point-to-your-mom.png")
+      break
+    case 22:
       $("#triangle").attr("src", "images/fat-chance.png")
       break
     default:
