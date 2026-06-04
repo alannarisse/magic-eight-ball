@@ -1,8 +1,24 @@
-$(".button").click(function () {
+let deviceMove = false;
+window.addEventListener("devicemotion", (event) => {
+  deviceMove = true;
+});
+
+$(".button").click(function (e) {
+  newAnswer(e)
+})
+
+if (deviceMove) { 
+  newAnswer(e)
+}
+
+function newAnswer(e) { 
+
+
   //a random number is generated
   //that number chooses which string to display
   //the string displays in html
   // the numVal should be the same as the number of cases
+ 
   let numVal = Math.floor(Math.random() * 22)
   const expr = numVal
   switch (expr) {
@@ -76,10 +92,11 @@ $(".button").click(function () {
     default:
       $("#triangle").attr("src", "images/thoughts.png")
   }
-})
 
 // Math.floor(Math.random() * 10) + 1
 
 // if(something=true){
 //   then do some stuff
 // }
+
+}
