@@ -1,27 +1,23 @@
-let deviceMove = false;
-window.addEventListener("devicemotion", (event) => {
-  deviceMove = true;
-});
+
 
 $(".button").click(function (e) {
   newAnswer(e)
 })
 
-if (deviceMove) { 
-  newAnswer(e)
-}
 
 function newAnswer(e) { 
-
 
   //a random number is generated
   //that number chooses which string to display
   //the string displays in html
   // the numVal should be the same as the number of cases
  
-  let numVal = Math.floor(Math.random() * 22)
+  let numVal = Math.floor(Math.random() * 27)
   const expr = numVal
   switch (expr) {
+    case 0:
+      $("#triangle").attr("src", "images/gnarly.png")
+      break
     case 1:
       //$('.answer).html("this is new");
       $("#triangle").attr("src", "images/ass.png")
@@ -89,6 +85,21 @@ function newAnswer(e) {
     case 22:
       $("#triangle").attr("src", "images/fat-chance.png")
       break
+    case 23:
+      $("#triangle").attr("src", "images/big-back.png")
+      break
+    case 24:
+      $("#triangle").attr("src", "images/yes-yes.png")
+      break
+    case 25:
+      $("#triangle").attr("src", "images/you-bet.png")
+      break
+    case 26:
+      $("#triangle").attr("src", "images/not-my-problem.png")
+      break
+        case 27:
+      $("#triangle").attr("src", "images/eat-my-shorts.png")
+      break
     default:
       $("#triangle").attr("src", "images/thoughts.png")
   }
@@ -100,3 +111,19 @@ function newAnswer(e) {
 // }
 
 }
+
+function handleMotion(event) {
+    const x = event.accelerationIncludingGravity.x;
+    const y = event.accelerationIncludingGravity.y;
+    const z = event.accelerationIncludingGravity.z;
+
+    const acceleration = Math.sqrt(x * x + y * y + z * z);
+
+    // Implement your shake detection logic here
+    // Example: Check if acceleration exceeds a threshold within a timeframe
+    if (acceleration > 15 ) {
+        newAnswer()
+    }
+}
+
+window.addEventListener('devicemotion', handleMotion);
